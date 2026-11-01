@@ -155,7 +155,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcop6"]
-size = Vector2(89, 84.5)
+size = Vector2(96.5, 90.25)
 
 [node name="Node2D" type="Node2D" unique_id=1647333791]
 script = ExtResource("1_gicao")
@@ -165,11 +165,11 @@ position = Vector2(106, 120)
 scale = Vector2(1.0157895, 1)
 sprite_frames = SubResource("SpriteFrames_8p1m4")
 animation = &"idle"
-frame_progress = 0.32209593
+frame_progress = 0.9180652
 
 [node name="Area2D" type="Area2D" parent="." unique_id=375603503]
 position = Vector2(69, 73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1513286472]
-position = Vector2(37, 55)
+position = Vector2(33.25, 52.125)
 shape = SubResource("RectangleShape2D_kcop6")
