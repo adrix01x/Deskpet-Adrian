@@ -2,6 +2,35 @@
 
 [ext_resource type="Script" uid="uid://f0kfcqysc23f" path="res://ecri.gd" id="1_gicao"]
 [ext_resource type="Texture2D" uid="uid://by8gew074yvda" path="res://raccoon assets.png" id="2_16msp"]
+[ext_resource type="Texture2D" uid="uid://00so5ura0s7w" path="res://eat assets.png" id="2_fkryw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa8ur"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(1, 0, 92, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7makd"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(96, 0, 91, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiycf"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(187, 0, 91, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn8un"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(280, 0, 91, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfan3"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(377, 0, 89, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aisgt"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(472, 0, 86, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2nj6"]
+atlas = ExtResource("2_fkryw")
+region = Rect2(563, 0, 83, 129)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gicao"]
 atlas = ExtResource("2_16msp")
@@ -81,6 +110,32 @@ region = Rect2(570, 124, 95, 124)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8p1m4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa8ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7makd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiycf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn8un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfan3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aisgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2nj6")
+}],
+"loop": 1,
+"name": &"eat",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gicao")
@@ -164,8 +219,8 @@ script = ExtResource("1_gicao")
 position = Vector2(106, 120)
 scale = Vector2(1.0157895, 1)
 sprite_frames = SubResource("SpriteFrames_8p1m4")
-animation = &"idle"
-frame_progress = 0.9180652
+animation = &"eat"
+frame_progress = 0.4038289
 
 [node name="Area2D" type="Area2D" parent="." unique_id=375603503]
 position = Vector2(69, 73)

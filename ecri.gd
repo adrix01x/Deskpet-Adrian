@@ -12,6 +12,7 @@ var is_idling = false
 
 var is_dragging = false
 var drag_offset = Vector2i()
+var is_eating = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var area = $Area2D
@@ -30,19 +31,32 @@ func _ready() -> void:
 
 func _on_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
+		if event.pressed:
+
+			if event.button_index == MOUSE_BUTTON_LEFT:
 				is_dragging = true
 
 				var mouse_screen_pos = DisplayServer.mouse_get_position()
 				var win_pos = DisplayServer.window_get_position()
 
 				drag_offset = mouse_screen_pos - win_pos
-			else:
-				is_dragging = false
+			elif event.button_index == MOUSE_BUTTON_RIGHT:
+				is_eating = !is_eating
+				if is_eating:
+					animated_sprite.play("eat")
+				else:
+					animated_sprite.play("walk")
+					
+					
+
+		elif event.button_index == MOUSE_BUTTON_LEFT:
+			is_dragging = false
 
 
 func _physics_process(delta: float) -> void:
+	if is_eating:
+		return
+	
 	if is_dragging:
 		var current_mouse_pos = DisplayServer.mouse_get_position()
 		DisplayServer.window_set_position(current_mouse_pos - drag_offset)
